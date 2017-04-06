@@ -1,0 +1,5576 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://fis.baidu.com/">fis (v1.10.5)</a>
+</h1>
+<h4>front-end integrated solution.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis">module fis</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache">
+            function <span class="apidocSignatureSpan">fis.</span>cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache">
+            function <span class="apidocSignatureSpan">fis.</span>cache.Cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile">
+            function <span class="apidocSignatureSpan">fis.</span>compile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config">
+            function <span class="apidocSignatureSpan">fis.</span>config.Config
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.file">
+            function <span class="apidocSignatureSpan">fis.</span>file
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.release">
+            function <span class="apidocSignatureSpan">fis.</span>release
+            <span class="apidocSignatureSpan">(opt, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.require">
+            function <span class="apidocSignatureSpan">fis.</span>require
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.time">
+            function <span class="apidocSignatureSpan">fis.</span>time
+            <span class="apidocSignatureSpan">(title)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri">
+            function <span class="apidocSignatureSpan">fis.</span>uri
+            <span class="apidocSignatureSpan">(path, dirname)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util">
+            function <span class="apidocSignatureSpan">fis.</span>util
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>cache.Cache.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>cli</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>cli.colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>compile.settings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>config.Config.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>emitter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>log</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>log.on</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.</span>project</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">fis.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.cache">module fis.cache</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.cache.</span>enable</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.cache">
+            function <span class="apidocSignatureSpan">fis.</span>cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache">
+            function <span class="apidocSignatureSpan">fis.cache.</span>Cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.clean">
+            function <span class="apidocSignatureSpan">fis.cache.</span>clean
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.cache.Cache">module fis.cache.Cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.Cache">
+            function <span class="apidocSignatureSpan">fis.cache.</span>Cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.cache.Cache.prototype">module fis.cache.Cache.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.addDeps">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>addDeps
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.constructor">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(path, dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.mergeDeps">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>mergeDeps
+            <span class="apidocSignatureSpan">(cache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.removeDeps">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>removeDeps
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.revert">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>revert
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cache.Cache.prototype.save">
+            function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>save
+            <span class="apidocSignatureSpan">(content, info)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.cli">module fis.cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.help">
+            function <span class="apidocSignatureSpan">fis.cli.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.run">
+            function <span class="apidocSignatureSpan">fis.cli.</span>run
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.version">
+            function <span class="apidocSignatureSpan">fis.cli.</span>version
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.cli.</span>colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.cli.</span>commander</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.cli.</span>info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">fis.cli.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.cli.colors">module fis.cli.colors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.addSequencer">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>addSequencer
+            <span class="apidocSignatureSpan">(name, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.black">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>black
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.blackBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>blackBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.blue">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>blue
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.blueBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>blueBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.bold">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>bold
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.cyan">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>cyan
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.cyanBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>cyanBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.green">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>green
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.greenBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>greenBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.grey">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>grey
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.greyBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>greyBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.inverse">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>inverse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.italic">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>italic
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.magenta">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>magenta
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.magentaBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>magentaBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.rainbow">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>rainbow
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.red">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>red
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.redBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>redBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.setTheme">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>setTheme
+            <span class="apidocSignatureSpan">(theme)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.strikethrough">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>strikethrough
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.stripColors">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>stripColors
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.underline">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>underline
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.white">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>white
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.whiteBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>whiteBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.yellow">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>yellow
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.yellowBG">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>yellowBG
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.zalgo">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>zalgo
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.cli.colors.zebra">
+            function <span class="apidocSignatureSpan">fis.cli.colors.</span>zebra
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.cli.colors.</span>themes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">fis.cli.colors.</span>mode</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.compile">module fis.compile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.compile">
+            function <span class="apidocSignatureSpan">fis.</span>compile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.analyseComment">
+            function <span class="apidocSignatureSpan">fis.compile.</span>analyseComment
+            <span class="apidocSignatureSpan">(comment, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.clean">
+            function <span class="apidocSignatureSpan">fis.compile.</span>clean
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.extCss">
+            function <span class="apidocSignatureSpan">fis.compile.</span>extCss
+            <span class="apidocSignatureSpan">(content, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.extHtml">
+            function <span class="apidocSignatureSpan">fis.compile.</span>extHtml
+            <span class="apidocSignatureSpan">(content, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.extJs">
+            function <span class="apidocSignatureSpan">fis.compile.</span>extJs
+            <span class="apidocSignatureSpan">(content, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.isInline">
+            function <span class="apidocSignatureSpan">fis.compile.</span>isInline
+            <span class="apidocSignatureSpan">(info)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.setup">
+            function <span class="apidocSignatureSpan">fis.compile.</span>setup
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.compile.</span>lang</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.compile.</span>settings</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.compile.settings">module fis.compile.settings</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>hash</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>lint</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>optimize</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>test</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.compile.settings.</span>unique</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.settings.afterCacheRevert">
+            function <span class="apidocSignatureSpan">fis.compile.settings.</span>afterCacheRevert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.settings.afterCompile">
+            function <span class="apidocSignatureSpan">fis.compile.settings.</span>afterCompile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.settings.beforeCacheRevert">
+            function <span class="apidocSignatureSpan">fis.compile.settings.</span>beforeCacheRevert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.compile.settings.beforeCompile">
+            function <span class="apidocSignatureSpan">fis.compile.settings.</span>beforeCompile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.config">module fis.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config">
+            function <span class="apidocSignatureSpan">fis.config.</span>Config
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.config.</span>data</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.config.Config">module fis.config.Config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.Config">
+            function <span class="apidocSignatureSpan">fis.config.</span>Config
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.config.Config.prototype">module fis.config.Config.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.constructor">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.del">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>del
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.get">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>get
+            <span class="apidocSignatureSpan">(path, def)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.init">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.merge">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.require">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>require
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.config.Config.prototype.set">
+            function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>set
+            <span class="apidocSignatureSpan">(path, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.file">module fis.file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.file.file">
+            function <span class="apidocSignatureSpan">fis.</span>file
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.file.wrap">
+            function <span class="apidocSignatureSpan">fis.file.</span>wrap
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.log">module fis.log</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.log.</span>alert</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">fis.log.</span>throw</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.debug">
+            function <span class="apidocSignatureSpan">fis.log.</span>debug
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.error">
+            function <span class="apidocSignatureSpan">fis.log.</span>error
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.notice">
+            function <span class="apidocSignatureSpan">fis.log.</span>notice
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.now">
+            function <span class="apidocSignatureSpan">fis.log.</span>now
+            <span class="apidocSignatureSpan">(withoutMilliseconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.warning">
+            function <span class="apidocSignatureSpan">fis.log.</span>warning
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_ALL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_DEBUG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_ERROR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_NORMAL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_NOTIC</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>L_WARNI</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">fis.log.</span>level</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fis.log.</span>on</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.log.on">module fis.log.on</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.on.any">
+            function <span class="apidocSignatureSpan">fis.log.on.</span>any
+            <span class="apidocSignatureSpan">(type, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.on.debug">
+            function <span class="apidocSignatureSpan">fis.log.on.</span>debug
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.on.error">
+            function <span class="apidocSignatureSpan">fis.log.on.</span>error
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.on.notice">
+            function <span class="apidocSignatureSpan">fis.log.on.</span>notice
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.log.on.warning">
+            function <span class="apidocSignatureSpan">fis.log.on.</span>warning
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.project">module fis.project</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.getCachePath">
+            function <span class="apidocSignatureSpan">fis.project.</span>getCachePath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.getProjectPath">
+            function <span class="apidocSignatureSpan">fis.project.</span>getProjectPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.getSource">
+            function <span class="apidocSignatureSpan">fis.project.</span>getSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.getTempPath">
+            function <span class="apidocSignatureSpan">fis.project.</span>getTempPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.setProjectRoot">
+            function <span class="apidocSignatureSpan">fis.project.</span>setProjectRoot
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.project.setTempRoot">
+            function <span class="apidocSignatureSpan">fis.project.</span>setTempRoot
+            <span class="apidocSignatureSpan">(tmp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">fis.project.</span>DEFAULT_REMOTE_REPOS</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.uri">module fis.uri</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.uri">
+            function <span class="apidocSignatureSpan">fis.</span>uri
+            <span class="apidocSignatureSpan">(path, dirname)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.getId">
+            function <span class="apidocSignatureSpan">fis.uri.</span>getId
+            <span class="apidocSignatureSpan">(path, dirname)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.replaceDefine">
+            function <span class="apidocSignatureSpan">fis.uri.</span>replaceDefine
+            <span class="apidocSignatureSpan">(value, escape)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.replaceMatches">
+            function <span class="apidocSignatureSpan">fis.uri.</span>replaceMatches
+            <span class="apidocSignatureSpan">(value, matches)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.replaceProperties">
+            function <span class="apidocSignatureSpan">fis.uri.</span>replaceProperties
+            <span class="apidocSignatureSpan">(source, matches, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.uri.roadmap">
+            function <span class="apidocSignatureSpan">fis.uri.</span>roadmap
+            <span class="apidocSignatureSpan">(subpath, path, obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fis.util">module fis.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.util">
+            function <span class="apidocSignatureSpan">fis.</span>util
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.base64">
+            function <span class="apidocSignatureSpan">fis.util.</span>base64
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.camelcase">
+            function <span class="apidocSignatureSpan">fis.util.</span>camelcase
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.clone">
+            function <span class="apidocSignatureSpan">fis.util.</span>clone
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.copy">
+            function <span class="apidocSignatureSpan">fis.util.</span>copy
+            <span class="apidocSignatureSpan">(rSource, target, include, exclude, uncover, move)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.del">
+            function <span class="apidocSignatureSpan">fis.util.</span>del
+            <span class="apidocSignatureSpan">(rPath, include, exclude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.download">
+            function <span class="apidocSignatureSpan">fis.util.</span>download
+            <span class="apidocSignatureSpan">(url, callback, extract, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.escapeReg">
+            function <span class="apidocSignatureSpan">fis.util.</span>escapeReg
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.escapeShellArg">
+            function <span class="apidocSignatureSpan">fis.util.</span>escapeShellArg
+            <span class="apidocSignatureSpan">(cmd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.escapeShellCmd">
+            function <span class="apidocSignatureSpan">fis.util.</span>escapeShellCmd
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.exists">
+            function <span class="apidocSignatureSpan">fis.util.</span>exists
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.ext">
+            function <span class="apidocSignatureSpan">fis.util.</span>ext
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.filter">
+            function <span class="apidocSignatureSpan">fis.util.</span>filter
+            <span class="apidocSignatureSpan">(str, include, exclude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.find">
+            function <span class="apidocSignatureSpan">fis.util.</span>find
+            <span class="apidocSignatureSpan">(rPath, include, exclude, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.getMimeType">
+            function <span class="apidocSignatureSpan">fis.util.</span>getMimeType
+            <span class="apidocSignatureSpan">(ext)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.glob">
+            function <span class="apidocSignatureSpan">fis.util.</span>glob
+            <span class="apidocSignatureSpan">(pattern, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.install">
+            function <span class="apidocSignatureSpan">fis.util.</span>install
+            <span class="apidocSignatureSpan">(name, version, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.is">
+            function <span class="apidocSignatureSpan">fis.util.</span>is
+            <span class="apidocSignatureSpan">(source, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isAbsolute">
+            function <span class="apidocSignatureSpan">fis.util.</span>isAbsolute
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isDir">
+            function <span class="apidocSignatureSpan">fis.util.</span>isDir
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isEmpty">
+            function <span class="apidocSignatureSpan">fis.util.</span>isEmpty
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isFile">
+            function <span class="apidocSignatureSpan">fis.util.</span>isFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isImageFile">
+            function <span class="apidocSignatureSpan">fis.util.</span>isImageFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isTextFile">
+            function <span class="apidocSignatureSpan">fis.util.</span>isTextFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isUtf8">
+            function <span class="apidocSignatureSpan">fis.util.</span>isUtf8
+            <span class="apidocSignatureSpan">(bytes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.isWin">
+            function <span class="apidocSignatureSpan">fis.util.</span>isWin
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.map">
+            function <span class="apidocSignatureSpan">fis.util.</span>map
+            <span class="apidocSignatureSpan">(obj, callback, merge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.md5">
+            function <span class="apidocSignatureSpan">fis.util.</span>md5
+            <span class="apidocSignatureSpan">(data, len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.merge">
+            function <span class="apidocSignatureSpan">fis.util.</span>merge
+            <span class="apidocSignatureSpan">(source, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.mkdir">
+            function <span class="apidocSignatureSpan">fis.util.</span>mkdir
+            <span class="apidocSignatureSpan">(path, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.mtime">
+            function <span class="apidocSignatureSpan">fis.util.</span>mtime
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.nohup">
+            function <span class="apidocSignatureSpan">fis.util.</span>nohup
+            <span class="apidocSignatureSpan">(cmd, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.normalize">
+            function <span class="apidocSignatureSpan">fis.util.</span>normalize
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.pad">
+            function <span class="apidocSignatureSpan">fis.util.</span>pad
+            <span class="apidocSignatureSpan">(str, len, fill, pre)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.parseUrl">
+            function <span class="apidocSignatureSpan">fis.util.</span>parseUrl
+            <span class="apidocSignatureSpan">(url, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.pathinfo">
+            function <span class="apidocSignatureSpan">fis.util.</span>pathinfo
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.pipe">
+            function <span class="apidocSignatureSpan">fis.util.</span>pipe
+            <span class="apidocSignatureSpan">(type, callback, def)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.query">
+            function <span class="apidocSignatureSpan">fis.util.</span>query
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.read">
+            function <span class="apidocSignatureSpan">fis.util.</span>read
+            <span class="apidocSignatureSpan">(path, convert)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.readBuffer">
+            function <span class="apidocSignatureSpan">fis.util.</span>readBuffer
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.readJSON">
+            function <span class="apidocSignatureSpan">fis.util.</span>readJSON
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.realpath">
+            function <span class="apidocSignatureSpan">fis.util.</span>realpath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.realpathSafe">
+            function <span class="apidocSignatureSpan">fis.util.</span>realpathSafe
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.stringQuote">
+            function <span class="apidocSignatureSpan">fis.util.</span>stringQuote
+            <span class="apidocSignatureSpan">(str, quotes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.toEncoding">
+            function <span class="apidocSignatureSpan">fis.util.</span>toEncoding
+            <span class="apidocSignatureSpan">(str, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.touch">
+            function <span class="apidocSignatureSpan">fis.util.</span>touch
+            <span class="apidocSignatureSpan">(path, mtime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.upload">
+            function <span class="apidocSignatureSpan">fis.util.</span>upload
+            <span class="apidocSignatureSpan">(url, opt, data, content, subpath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fis.util.write">
+            function <span class="apidocSignatureSpan">fis.util.</span>write
+            <span class="apidocSignatureSpan">(path, data, charset, append)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis" id="apidoc.module.fis">module fis</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache" id="apidoc.element.fis.cache">
+        function <span class="apidocSignatureSpan">fis.</span>cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cache = function (){
+    return new F(arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache" id="apidoc.element.fis.cache.Cache">
+        function <span class="apidocSignatureSpan">fis.</span>cache.Cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cache.Cache = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile" id="apidoc.element.fis.compile">
+        function <span class="apidocSignatureSpan">fis.</span>compile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (file){
+    if(!CACHE_DIR){
+        fis.log.error('uninitialized compile cache directory.');
+    }
+    file = fis.file.wrap(file);
+    if(!file.realpath){
+        error('unable to compile [' + file.subpath + ']: Invalid file realpath.');
+    }
+    fis.log.debug('compile [' + file.realpath + '] start');
+    fis.emitter.emit('compile:start', file);
+    if(file.isFile()){
+        if(file.useCompile &amp;&amp; file.ext &amp;&amp; file.ext !== '.'){
+            var cache = file.cache = fis.cache(file.realpath, CACHE_DIR),
+                revertObj = {};
+            if(file.useCache &amp;&amp; cache.revert(revertObj)){
+                exports.settings.beforeCacheRevert(file);
+                file.requires = revertObj.info.requires;
+                file.extras = revertObj.info.extras;
+                if(file.isText()){
+                    revertObj.content = revertObj.content.toString('utf8');
+                }
+                file.setContent(revertObj.content);
+                exports.settings.afterCacheRevert(file);
+            } else {
+                exports.settings.beforeCompile(file);
+                file.setContent(fis.util.read(file.realpath));
+                process(file);
+                exports.settings.afterCompile(file);
+                revertObj = {
+                    requires : file.requires,
+                    extras : file.extras
+                };
+                cache.save(file.getContent(), revertObj);
+            }
+        } else {
+            file.setContent(file.isText() ? fis.util.read(file.realpath) : fis.util.fs.readFileSync(file.realpath));
+        }
+    } else if(file.useCompile &amp;&amp; file.ext &amp;&amp; file.ext !== '.'){
+        process(file);
+    }
+    if(exports.settings.hash &amp;&amp; file.useHash){
+        file.getHash();
+    }
+    file.compiled = true;
+    fis.log.debug('compile [' + file.realpath + '] end');
+    fis.emitter.emit('compile:end', file);
+    embeddedUnlock(file);
+    return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config" id="apidoc.element.fis.config.Config">
+        function <span class="apidocSignatureSpan">fis.</span>config.Config
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config.Config = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.file" id="apidoc.element.fis.file">
+        function <span class="apidocSignatureSpan">fis.</span>file
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (){
+    return new F(arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.release" id="apidoc.element.fis.release">
+        function <span class="apidocSignatureSpan">fis.</span>release
+        <span class="apidocSignatureSpan">(opt, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">release = function (opt, callback){
+    if(typeof opt === 'function'){
+        callback = opt;
+        opt = {};
+    } else {
+        opt = opt || {};
+    }
+
+    var src = {};
+    if (Array.isArray(opt.srcCache) &amp;&amp; opt.srcCache.length) {
+        opt.srcCache.forEach(function (path) {
+            if (!fis.util.isFile(path)) return;
+            var file = fis.file(path);
+            if (file.release) {
+                src[file.subpath] = file;
+            }
+        });
+    } else {
+        src = fis.project.getSource();
+    }
+
+    var ret = {
+        src : src,
+        ids : {},
+        pkg : {},
+        map : {
+            res : {},
+            pkg : {}
+        }
+    };
+    opt.hash = opt.md5 &gt; 0;
+    fis.compile.setup(opt);
+    fis.util.map(ret.src, function(subpath, file){
+        if(opt.beforeEach) {
+            opt.beforeEach(file, ret);
+        }
+
+        file = fis.compile(file);
+
+        if(opt.afterEach) {
+            opt.afterEach(file, ret);
+        }
+
+        if(file.release &amp;&amp; file.useMap) {
+            //add resource map
+            var id = file.getId();
+            ret.ids[id] = file;
+            if(file.isJsLike){
+                file.addSameNameRequire('.css');
+            } else if(file.isHtmlLike){
+                file.addSameNameRequire('.js');
+                file.addSameNameRequire('.css');
+            }
+            var res = ret.map.res[id] = {
+                uri  : file.getUrl(opt.hash, opt.domain),
+                type : file.rExt.replace(/^\./, '')
+            };
+            for(var key in file.extras){
+                if(file.extras.hasOwnProperty(key)){
+                    res.extras = file.extras;
+                    break;
+                }
+            }
+            if(file.requires &amp;&amp; file.requires.length){
+                res.deps = file.requires;
+            }
+        }
+    });
+
+    //project root
+    var root = fis.project.getProjectPath();
+
+    var ns = fis.config.get('namespace');
+
+    //get pack config
+    var conf = fis.config.get('pack');
+    if(typeof conf === 'undefined'){
+        //from fis-pack.json
+        var file = root + '/fis-pack.json';
+        if(fis.util.isFile(file)){
+            fis.config.set('pack', conf = fis.util.readJSON(file));
+        }
+    }
+
+    //package callback
+    var cb = function(packager, settings, key){
+        fis.log.debug('[' + key + '] start');
+        packager(ret, conf, settings, opt);
+        fis.log.debug('[' + key + '] end');
+    };
+
+    //prepackage
+    fis.util.pipe('prepackager', cb, opt.prepackager);
+
+    //package
+    if(opt.pack){
+        //package
+        fis.util.pipe('packager', cb, opt.packager);
+        //css sprites
+        fis.util.pipe('spriter', cb, opt.spriter);
+    }
+
+    //postpackage
+    fis.util.pipe('postpackager', cb, opt.postpackager);
+
+    //create map.json
+    var map = fis.file(root, (ns ? ns + '-' : '') + 'map.json');
+    if(map.release){
+        map.setContent(JSON.stringify(ret.map, null, opt.optimize ? null : 4));
+        ret.pkg[map.subpath] = map;
+    }
+
+    //done
+    if(callback){
+        callback(ret);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.require" id="apidoc.element.fis.require">
+        function <span class="apidocSignatureSpan">fis.</span>require
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require = function (){
+    var path;
+    var name = Array.prototype.slice.call(arguments, 0).join('-');
+    if(fis.require._cache.hasOwnProperty(name)) return fis.require._cache[name];
+    var names = [];
+    for(var i = 0, len = fis.require.prefixes.length; i &lt; len; i++){
+        try {
+            var pluginName = fis.require.prefixes[i] + '-' + name;
+            names.push(pluginName);
+            path = require.resolve(pluginName);
+            try {
+                return fis.require._cache[name] = require(pluginName);
+            } catch (e){
+                fis.log.error('load plugin [' + pluginName + '] error : ' + e.message);
+            }
+        } catch (e){
+            if (e.code !== 'MODULE_NOT_FOUND') {
+                throw e;
+            }
+        }
+    }
+    fis.log.error('unable to load plugin [' + names.join('] or [') + ']');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    '  Usage: ' + fis.cli.name + ' &lt;command&gt;',
+    '',
+    '  Commands:',
+    ''
+];
+
+fis.cli.help.commands.forEach(function(name){
+    var cmd = fis.<span class="apidocCodeKeywordSpan">require</span>('command', name);
+    name = cmd.name || name;
+    name = fis.util.pad(name, 12);
+    content.push('    ' + name + (cmd.desc || ''));
+});
+
+content = content.concat([
+    '',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.time" id="apidoc.element.fis.time">
+        function <span class="apidocSignatureSpan">fis.</span>time
+        <span class="apidocSignatureSpan">(title)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">time = function (title){
+    console.log(title + ' : ' + (Date.now() - last) + 'ms');
+    last = Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri" id="apidoc.element.fis.uri">
+        function <span class="apidocSignatureSpan">fis.</span>uri
+        <span class="apidocSignatureSpan">(path, dirname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uri = function (path, dirname){
+    var info = fis.util.stringQuote(path),
+        qInfo = fis.util.query(info.rest);
+    info.query = qInfo.query;
+    info.hash = qInfo.hash;
+    info.rest = qInfo.rest;
+    if(info.rest){
+        path = info.rest;
+        if(path.indexOf(':') === -1){
+            var file;
+            if(path[0] === '/'){
+                file = fis.project.getProjectPath(path);
+            } else if(dirname) {
+                file = fis.util(dirname, path);
+            } else {
+                fis.log.error('invalid dirname.');
+            }
+
+            var root = fis.project.getProjectPath();
+            if(file &amp;&amp; fis.util.isFile(file) &amp;&amp; file.indexOf(root) === 0){
+                info.file = fis.file(file);
+            }
+        }
+    }
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util" id="apidoc.element.fis.util">
+        function <span class="apidocSignatureSpan">fis.</span>util
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">util = function (path){
+    var type = typeof path;
+        if(arguments.length &gt; 1) {
+            path = Array.prototype.join.call(arguments, '/');
+        } else if(type === 'string') {
+            //do nothing for quickly determining.
+        } else if(type === 'object') {
+            path = Array.prototype.join.call(path, '/');
+        } else if(type === 'undefined') {
+            path = '';
+        }
+        if(path){
+            path = pth.normalize(path.replace(/[\/\\]+/g, '/')).replace(/\\/g, '/');
+            if(path !== '/'){
+                path = path.replace(/\/$/, '');
+            }
+        }
+        return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.cache" id="apidoc.module.fis.cache">module fis.cache</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.cache" id="apidoc.element.fis.cache.cache">
+        function <span class="apidocSignatureSpan">fis.</span>cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cache = function (){
+    return new F(arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache" id="apidoc.element.fis.cache.Cache">
+        function <span class="apidocSignatureSpan">fis.cache.</span>Cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.clean" id="apidoc.element.fis.cache.clean">
+        function <span class="apidocSignatureSpan">fis.cache.</span>clean
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clean = function (name){
+    name = name || '';
+    var path = fis.project.getCachePath(name);
+    if(fis.util.exists(path)){
+        fis.util.del(path);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.cache.Cache" id="apidoc.module.fis.cache.Cache">module fis.cache.Cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.Cache" id="apidoc.element.fis.cache.Cache.Cache">
+        function <span class="apidocSignatureSpan">fis.cache.</span>Cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.cache.Cache.prototype" id="apidoc.module.fis.cache.Cache.prototype">module fis.cache.Cache.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.addDeps" id="apidoc.element.fis.cache.Cache.prototype.addDeps">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>addDeps
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDeps = function (file){
+    var path = fis.util.realpath(file);
+    if(path){
+        this.deps[path] = fis.util.mtime(path).getTime();
+    } else {
+        fis.log.warning('unable to add dependency file[' + file + ']: No such file.');
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.constructor" id="apidoc.element.fis.cache.Cache.prototype.constructor">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(path, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (path, dir){
+    var file = fis.util.realpath(path);
+    if(!fis.util.isFile(file)){
+        fis.log.error('unable to cache file[' + path + ']: No such file.');
+    }
+    this.timestamp = fis.util.mtime(file).getTime();
+    this.deps = {};
+    this.version = fis.version;
+
+    var info = fis.util.pathinfo(file);
+    var basename = fis.project.getCachePath(dir, info.basename);
+    var hash = fis.util.md5(file, 10);
+    this.cacheFile = basename + '-c-' + hash + '.tmp';
+    this.cacheInfo = basename + '-o-' + hash + '.json';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.mergeDeps" id="apidoc.element.fis.cache.Cache.prototype.mergeDeps">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>mergeDeps
+        <span class="apidocSignatureSpan">(cache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeDeps = function (cache){
+    var deps = {};
+    if(cache instanceof Cache){
+        deps = cache.deps
+    } else if(typeof cache === 'object'){
+        deps = cache
+    } else {
+        fis.log.error('unable to merge deps of data[' + cache + ']');
+    }
+    fis.util.map(deps, this.deps, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.removeDeps" id="apidoc.element.fis.cache.Cache.prototype.removeDeps">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>removeDeps
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeDeps = function (file){
+    var path = fis.util.realpath(file);
+    if(path &amp;&amp; this.deps[path]){
+        delete this.deps[path];
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.revert" id="apidoc.element.fis.cache.Cache.prototype.revert">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>revert
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revert = function (file){
+    fis.log.debug('revert cache');
+    if(
+        exports.enable
+        &amp;&amp; fis.util.exists(this.cacheInfo)
+        &amp;&amp; fis.util.exists(this.cacheFile)
+    ){
+        fis.log.debug('cache file exists');
+        var infos = fis.util.readJSON(this.cacheInfo);
+        fis.log.debug('cache info read');
+        if(infos.version == this.version &amp;&amp; infos.timestamp == this.timestamp){
+            var deps = infos['deps'];
+            for(var f in deps){
+                if(deps.hasOwnProperty(f)){
+                    var d = fis.util.mtime(f);
+                    if(d == 0 || deps[f] != d.getTime()){
+                        fis.log.debug('cache is expired');
+                        return false;
+                    }
+                }
+            }
+            this.deps = deps;
+            fis.log.debug('cache is valid');
+            if(file){
+                file.info = infos.info;
+                file.content = fis.util.fs.readFileSync(this.cacheFile);
+            }
+            fis.log.debug('revert cache finished');
+            return true;
+        }
+    }
+    fis.log.debug('cache is expired');
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cache.Cache.prototype.save" id="apidoc.element.fis.cache.Cache.prototype.save">
+        function <span class="apidocSignatureSpan">fis.cache.Cache.prototype.</span>save
+        <span class="apidocSignatureSpan">(content, info)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (content, info){
+    var infos = {
+        version : this.version,
+        timestamp : this.timestamp,
+        deps : this.deps,
+        info : info
+    };
+    fis.util.write(this.cacheInfo, JSON.stringify(infos));
+    fis.util.write(this.cacheFile, content);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.cli" id="apidoc.module.fis.cli">module fis.cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.help" id="apidoc.element.fis.cli.help">
+        function <span class="apidocSignatureSpan">fis.cli.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function (){
+    var content = [
+        '',
+        '  Usage: ' + fis.cli.name + ' &lt;command&gt;',
+        '',
+        '  Commands:',
+        ''
+    ];
+
+    fis.cli.help.commands.forEach(function(name){
+        var cmd = fis.require('command', name);
+        name = cmd.name || name;
+        name = fis.util.pad(name, 12);
+        content.push('    ' + name + (cmd.desc || ''));
+    });
+
+    content = content.concat([
+        '',
+        '  Options:',
+        '',
+        '    -h, --help     output usage information',
+        '    -v, --version  output the version number',
+        '    --no-color     disable colored output',
+        ''
+    ]);
+    console.log(content.join('\n'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if(hasArgv(argv, '--no-color')){
+    fis.cli.colors.mode = 'none';
+}
+
+var first = argv[2];
+if(argv.length &lt; 3 || first === '-h' ||  first === '--help'){
+    fis.cli.<span class="apidocCodeKeywordSpan">help</span>();
+} else if(first === '-v' || first === '--version'){
+    fis.cli.version();
+} else if(first[0] === '-'){
+    fis.cli.help();
+} else {
+    //register command
+    var commander = fis.cli.commander = require('commander');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.run" id="apidoc.element.fis.cli.run">
+        function <span class="apidocSignatureSpan">fis.cli.</span>run
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (argv){
+
+    fis.processCWD = process.cwd();
+
+    if(hasArgv(argv, '--no-color')){
+        fis.cli.colors.mode = 'none';
+    }
+
+    var first = argv[2];
+    if(argv.length &lt; 3 || first === '-h' ||  first === '--help'){
+        fis.cli.help();
+    } else if(first === '-v' || first === '--version'){
+        fis.cli.version();
+    } else if(first[0] === '-'){
+        fis.cli.help();
+    } else {
+        //register command
+        var commander = fis.cli.commander = require('commander');
+        var cmd = fis.require('command', argv[2]);
+        cmd.register(
+            commander
+                .command(cmd.name || first)
+                .usage(cmd.usage)
+                .description(cmd.desc)
+        );
+        commander.parse(argv);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.version" id="apidoc.element.fis.cli.version">
+        function <span class="apidocSignatureSpan">fis.cli.</span>version
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function (){
+    var content = [
+        '',
+        '  v' + fis.cli.info.version,
+        '',
+        ' __' + '/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\'.bold.red + '__' + '/\\\\\\\\\\\\\\\\\\\\\\'.bold.yellow + '_____' + '/\\\\\\\\\\\\\\\\\\\\\\'.bold.green + '___',
+        '  _' + '\\/\\\\\\///////////'.bold.red + '__' + '\\/////\\\\\\///'.bold.yellow + '____' + '/\\\\\\/////////\\\\\\'.bold
+.green + '_' + '       ',
+        '   _' + '\\/\\\\\\'.bold.red + '_________________' + '\\/\\\\\\'.bold.yellow + '______' + '\\//\\\\\\'.bold.green + '______
+' + '\\///'.bold.green + '__',
+        '    _' + '\\/\\\\\\\\\\\\\\\\\\\\\\'.bold.red + '_________' + '\\/\\\\\\'.bold.yellow + '_______' + '\\////\\\\\\'.bold
+.green + '_________' + '     ',
+        '     _' + '\\/\\\\\\///////'.bold.red + '__________' + '\\/\\\\\\'.bold.yellow + '__________' + '\\////\\\\\\'.bold.green
+ + '______' + '    ',
+        '      _' + '\\/\\\\\\'.bold.red + '_________________' + '\\/\\\\\\'.bold.yellow + '_____________' + '\\////\\\\\\'.bold
+.green + '___' + '   ',
+        '       _' + '\\/\\\\\\'.bold.red + '_________________' + '\\/\\\\\\'.bold.yellow + '______' + '/\\\\\\'.bold.green + '______
+' + '\\//\\\\\\'.bold.green + '__',
+        '        _' + '\\/\\\\\\'.bold.red + '______________' + '/\\\\\\\\\\\\\\\\\\\\\\'.bold.yellow + '_' + '\\///\\\\\\\\\\\\\\\\\\\\\\/'.bold.green + '___',
+        '         _' + '\\///'.bold.red + '______________' + '\\///////////'.bold.yellow + '____' + '\\///////////'.bold.green + '
+_____',
+        ''
+    ].join('\n');
+    console.log(content);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    fis.cli.colors.mode = 'none';
+}
+
+var first = argv[2];
+if(argv.length &lt; 3 || first === '-h' ||  first === '--help'){
+    fis.cli.help();
+} else if(first === '-v' || first === '--version'){
+    fis.cli.<span class="apidocCodeKeywordSpan">version</span>();
+} else if(first[0] === '-'){
+    fis.cli.help();
+} else {
+    //register command
+    var commander = fis.cli.commander = require('commander');
+    var cmd = fis.require('command', argv[2]);
+    cmd.register(
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.cli.colors" id="apidoc.module.fis.cli.colors">module fis.cli.colors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.addSequencer" id="apidoc.element.fis.cli.colors.addSequencer">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>addSequencer
+        <span class="apidocSignatureSpan">(name, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSequencer = function (name, map) {
+  addProperty(name, sequencer(map));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.black" id="apidoc.element.fis.cli.colors.black">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>black
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">black = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.blackBG" id="apidoc.element.fis.cli.colors.blackBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>blackBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blackBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.blue" id="apidoc.element.fis.cli.colors.blue">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>blue
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blue = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.blueBG" id="apidoc.element.fis.cli.colors.blueBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>blueBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blueBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.bold" id="apidoc.element.fis.cli.colors.bold">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>bold
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bold = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.cyan" id="apidoc.element.fis.cli.colors.cyan">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>cyan
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cyan = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.cyanBG" id="apidoc.element.fis.cli.colors.cyanBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>cyanBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cyanBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.green" id="apidoc.element.fis.cli.colors.green">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>green
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">green = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.greenBG" id="apidoc.element.fis.cli.colors.greenBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>greenBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">greenBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.grey" id="apidoc.element.fis.cli.colors.grey">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>grey
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grey = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.greyBG" id="apidoc.element.fis.cli.colors.greyBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>greyBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">greyBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.inverse" id="apidoc.element.fis.cli.colors.inverse">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>inverse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inverse = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.italic" id="apidoc.element.fis.cli.colors.italic">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>italic
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">italic = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.magenta" id="apidoc.element.fis.cli.colors.magenta">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>magenta
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">magenta = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.magentaBG" id="apidoc.element.fis.cli.colors.magentaBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>magentaBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">magentaBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.rainbow" id="apidoc.element.fis.cli.colors.rainbow">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>rainbow
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rainbow = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.red" id="apidoc.element.fis.cli.colors.red">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>red
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">red = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.redBG" id="apidoc.element.fis.cli.colors.redBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>redBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">redBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.setTheme" id="apidoc.element.fis.cli.colors.setTheme">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>setTheme
+        <span class="apidocSignatureSpan">(theme)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTheme = function (theme) {
+  if (typeof theme === 'string') {
+    try {
+      exports.themes[theme] = require(theme);
+      applyTheme(exports.themes[theme]);
+      return exports.themes[theme];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  } else {
+    applyTheme(theme);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.strikethrough" id="apidoc.element.fis.cli.colors.strikethrough">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>strikethrough
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strikethrough = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.stripColors" id="apidoc.element.fis.cli.colors.stripColors">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>stripColors
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripColors = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.underline" id="apidoc.element.fis.cli.colors.underline">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>underline
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">underline = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.white" id="apidoc.element.fis.cli.colors.white">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>white
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">white = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.whiteBG" id="apidoc.element.fis.cli.colors.whiteBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>whiteBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">whiteBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.yellow" id="apidoc.element.fis.cli.colors.yellow">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>yellow
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yellow = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.yellowBG" id="apidoc.element.fis.cli.colors.yellowBG">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>yellowBG
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yellowBG = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.zalgo" id="apidoc.element.fis.cli.colors.zalgo">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>zalgo
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zalgo = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.cli.colors.zebra" id="apidoc.element.fis.cli.colors.zebra">
+        function <span class="apidocSignatureSpan">fis.cli.colors.</span>zebra
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zebra = function (str) {
+  return func.apply(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.compile" id="apidoc.module.fis.compile">module fis.compile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.compile" id="apidoc.element.fis.compile.compile">
+        function <span class="apidocSignatureSpan">fis.</span>compile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (file){
+    if(!CACHE_DIR){
+        fis.log.error('uninitialized compile cache directory.');
+    }
+    file = fis.file.wrap(file);
+    if(!file.realpath){
+        error('unable to compile [' + file.subpath + ']: Invalid file realpath.');
+    }
+    fis.log.debug('compile [' + file.realpath + '] start');
+    fis.emitter.emit('compile:start', file);
+    if(file.isFile()){
+        if(file.useCompile &amp;&amp; file.ext &amp;&amp; file.ext !== '.'){
+            var cache = file.cache = fis.cache(file.realpath, CACHE_DIR),
+                revertObj = {};
+            if(file.useCache &amp;&amp; cache.revert(revertObj)){
+                exports.settings.beforeCacheRevert(file);
+                file.requires = revertObj.info.requires;
+                file.extras = revertObj.info.extras;
+                if(file.isText()){
+                    revertObj.content = revertObj.content.toString('utf8');
+                }
+                file.setContent(revertObj.content);
+                exports.settings.afterCacheRevert(file);
+            } else {
+                exports.settings.beforeCompile(file);
+                file.setContent(fis.util.read(file.realpath));
+                process(file);
+                exports.settings.afterCompile(file);
+                revertObj = {
+                    requires : file.requires,
+                    extras : file.extras
+                };
+                cache.save(file.getContent(), revertObj);
+            }
+        } else {
+            file.setContent(file.isText() ? fis.util.read(file.realpath) : fis.util.fs.readFileSync(file.realpath));
+        }
+    } else if(file.useCompile &amp;&amp; file.ext &amp;&amp; file.ext !== '.'){
+        process(file);
+    }
+    if(exports.settings.hash &amp;&amp; file.useHash){
+        file.getHash();
+    }
+    file.compiled = true;
+    fis.log.debug('compile [' + file.realpath + '] end');
+    fis.emitter.emit('compile:end', file);
+    embeddedUnlock(file);
+    return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.analyseComment" id="apidoc.element.fis.compile.analyseComment">
+        function <span class="apidocSignatureSpan">fis.compile.</span>analyseComment
+        <span class="apidocSignatureSpan">(comment, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function analyseComment(comment, callback){
+    var reg = /(@require\s+)('[^']+'|"[^"]+"|[^\s;!@#%^&amp;*()]+)/g;
+    callback = callback || function(m, prefix, value){
+        return prefix + map.require.ld + value + map.require.rd;
+    };
+    return comment.replace(reg, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.clean" id="apidoc.element.fis.compile.clean">
+        function <span class="apidocSignatureSpan">fis.compile.</span>clean
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clean = function (name){
+    if(name){
+        fis.cache.clean('compile/' + name);
+    } else if(CACHE_DIR) {
+        fis.cache.clean(CACHE_DIR);
+    } else {
+        fis.cache.clean('compile');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.extCss" id="apidoc.element.fis.compile.extCss">
+        function <span class="apidocSignatureSpan">fis.compile.</span>extCss
+        <span class="apidocSignatureSpan">(content, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extCss(content, callback){
+    var reg = /(\/\*[\s\S]*?(?:\*\/|$))|(?:@import\s+)?\burl\s*\(\s*("(?:[^\\"\r\n\f]|\\[\s\S])*"|'(?:[^\\'\n\r\f]|\\[\s\S])*'|[^)}\s]+)\s*\)(\s*;?)|\bsrc\s*=\s*("(?:[^\\"\r\n\f]|\\[\s\S])*"|'(?:[^\\'\n\r\f]|\\[\s\S])*'|[^\s}]+)/g;
+    callback = callback || function(m, comment, url, last, filter){
+        if(url){
+            var key = isInline(fis.util.query(url)) ? 'embed' : 'uri';
+            if(m.indexOf('@') === 0){
+                if(key === 'embed'){
+                    m = map.embed.ld + url + map.embed.rd + last.replace(/;$/, '');
+                } else {
+                    m = '@import url(' + map.uri.ld + url + map.uri.rd + ')' + last;
+                }
+            } else {
+                m = 'url(' + map[key].ld + url + map[key].rd + ')' + last;
+            }
+        } else if(filter) {
+            m = 'src=' + map.uri.ld + filter + map.uri.rd;
+        } else if(comment) {
+            m = analyseComment(comment);
+        }
+        return m;
+    };
+    return content.replace(reg, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.extHtml" id="apidoc.element.fis.compile.extHtml">
+        function <span class="apidocSignatureSpan">fis.compile.</span>extHtml
+        <span class="apidocSignatureSpan">(content, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extHtml(content, callback){
+    var reg = /(&lt;script(?:(?=\s)[\s\S]*?["'\s\w\/\-]&gt;|&gt;))([\s\S]*?)(?=&lt;\/script\s*&gt;|$)|(&lt;style(?:(?=\s)[\s\S]*?["'\s\w\/\-]&gt;|&gt;))([\s\S]*?)(?=&lt;\/style\s*&gt;|$)|&lt;(img|embed|audio|video|link|object|source)\s+[\s\S]*?["'\s\w\/\-](?:&gt;|$)|&lt;!--inline\[([^\]]+)\]--&gt;|&lt;!--(?!\[)([\s\S]*?)(--&gt;|$)/ig;
+    callback = callback || function(m, $1, $2, $3, $4, $5, $6, $7, $8){
+        if($1){//&lt;script&gt;
+            var embed = '';
+            $1 = $1.replace(/(\s(?:data-)?src\s*=\s*)('[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, function(m, prefix, value){
+                if(isInline(fis.util.query(value))){
+                    embed += map.embed.ld + value + map.embed.rd;
+                    return '';
+                } else {
+                    return prefix + map.uri.ld + value + map.uri.rd;
+                }
+            });
+            if(embed){
+                //embed file
+                m = $1 + embed;
+            } else if(!/\s+type\s*=/i.test($1) || /\s+type\s*=\s*(['"]?)text\/javascript\1/i.test($1)) {
+                //without attrubite [type] or must be [text/javascript]
+                m = $1 + extJs($2);
+            } else {
+                //other type as html
+                m = $1 + extHtml($2);
+            }
+        } else if($3){//&lt;style&gt;
+            m = $3 + extCss($4);
+        } else if($5){//&lt;img|embed|audio|video|link|object|source&gt;
+            var tag = $5.toLowerCase();
+            if(tag === 'link'){
+                var inline = '', isCssLink = false, isImportLink = false;
+                var result = m.match(/\srel\s*=\s*('[^']+'|"[^"]+"|[^\s\/&gt;]+)/i);
+                if(result &amp;&amp; result[1]){
+                    var rel = result[1].replace(/^['"]|['"]$/g, '').toLowerCase();
+                    isCssLink = rel === 'stylesheet';
+                    isImportLink = rel === 'import';
+                }
+                m = m.replace(/(\s(?:data-)?href\s*=\s*)('[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, function(_, prefix, value){
+                    if((isCssLink || isImportLink) &amp;&amp; isInline(fis.util.query(value))){
+                        if(isCssLink) {
+                            inline += '&lt;style' + m.substring(5).replace(/\/(?=&gt;$)/, '').replace(/\s+(?:charset|href|data-href|hreflang
+|rel|rev|sizes|target)\s*=\s*(?:'[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, '');
+                        }
+                        inline += map.embed.ld + value + map.embed.rd;
+                        if(isCssLink) {
+                            inline += '&lt;/style&gt;';
+                        }
+                        return '';
+                    } else {
+                        return prefix + map.uri.ld + value + map.uri.rd;
+                    }
+                });
+                m = inline || m;
+            } else if(tag === 'object'){
+                m = m.replace(/(\sdata\s*=\s*)('[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, function(m, prefix, value){
+                    return prefix + map.uri.ld + value + map.uri.rd;
+                });
+            } else {
+                m = m.replace(/(\s(?:data-)?src\s*=\s*)('[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, function(m, prefix, value){
+                    var key = isInline(fis.util.query(value)) ? 'embed' : 'uri';
+                    return prefix + map[key]['ld'] + value + map[key]['rd'];
+                });
+                if (tag == 'img') {
+                    //&lt;img src="image-src.png" srcset="image-1x.png 1x, image-2x.png 2x, image-3x.png 3x, image-4x.png 4x"&gt;
+                    //http://www.webkit.org/demos/srcset/
+                    m = m.replace(/(\ssrcset\s*=\s*)('[^']+'|"[^"]+"|[^\s\/&gt;]+)/ig, function(m, prefix, value){
+                        var info = fis.util.stringQuote(value);
+                        var set = info.rest.split(',');
+                        var imgset = [];
+                        set.forEach(function (item) {
+                            item = item.trim();
+                            var p = item.indexOf(' ');
+                            if (p == -1) {
+                                imgset.push(item);
+                                return;
+                            } ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.extJs" id="apidoc.element.fis.compile.extJs">
+        function <span class="apidocSignatureSpan">fis.compile.</span>extJs
+        <span class="apidocSignatureSpan">(content, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extJs(content, callback){
+    var reg = /"(?:[^\\"\r\n\f]|\\[\s\S])*"|'(?:[^\\'\n\r\f]|\\[\s\S])*'|(\/\/[^\r\n\f]+|\/\*[\s\S]*?(?:\*\/|$))|\b(__inline|__uri
+|require)\s*\(\s*("(?:[^\\"\r\n\f]|\\[\s\S])*"|'(?:[^\\'\n\r\f]|\\[\s\S])*')\s*\)/g;
+    callback = callback || function(m, comment, type, value){
+        if(type){
+            switch (type){
+                case '__inline':
+                    m = map.jsEmbed.ld + value + map.jsEmbed.rd;
+                    break;
+                case '__uri':
+                    m = map.uri.ld + value + map.uri.rd;
+                    break;
+                case 'require':
+                    m = 'require(' + map.require.ld + value + map.require.rd + ')';
+                    break;
+            }
+        } else if(comment){
+            m = analyseComment(comment);
+        }
+        return m;
+    };
+    return content.replace(reg, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.isInline" id="apidoc.element.fis.compile.isInline">
+        function <span class="apidocSignatureSpan">fis.compile.</span>isInline
+        <span class="apidocSignatureSpan">(info)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isInline(info){
+    return /[?&amp;]__inline(?:[=&amp;'"]|$)/.test(info.query);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.setup" id="apidoc.element.fis.compile.setup">
+        function <span class="apidocSignatureSpan">fis.compile.</span>setup
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (opt){
+    var settings = exports.settings;
+    if(opt){
+        fis.util.map(settings, function(key){
+            if(typeof opt[key] !== 'undefined'){
+                settings[key] = opt[key];
+            }
+        });
+    }
+    CACHE_DIR = 'compile/';
+    if(settings.unique){
+        CACHE_DIR = 'compile_' + Date.now() + '-' + Math.random();
+    } else {
+        CACHE_DIR += ''
+            + (settings.debug    ? 'debug'     : 'release')
+            + (settings.optimize ? '-optimize' : '')
+            + (settings.hash     ? '-hash'     : '')
+            + (settings.domain   ? '-domain'   : '');
+    }
+    return CACHE_DIR;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.compile.settings" id="apidoc.module.fis.compile.settings">module fis.compile.settings</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.settings.afterCacheRevert" id="apidoc.element.fis.compile.settings.afterCacheRevert">
+        function <span class="apidocSignatureSpan">fis.compile.settings.</span>afterCacheRevert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">afterCacheRevert = function (){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.settings.afterCompile" id="apidoc.element.fis.compile.settings.afterCompile">
+        function <span class="apidocSignatureSpan">fis.compile.settings.</span>afterCompile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">afterCompile = function (){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.settings.beforeCacheRevert" id="apidoc.element.fis.compile.settings.beforeCacheRevert">
+        function <span class="apidocSignatureSpan">fis.compile.settings.</span>beforeCacheRevert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beforeCacheRevert = function (){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.compile.settings.beforeCompile" id="apidoc.element.fis.compile.settings.beforeCompile">
+        function <span class="apidocSignatureSpan">fis.compile.settings.</span>beforeCompile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beforeCompile = function (){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.config" id="apidoc.module.fis.config">module fis.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config" id="apidoc.element.fis.config.Config">
+        function <span class="apidocSignatureSpan">fis.config.</span>Config
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Config = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.config.Config" id="apidoc.module.fis.config.Config">module fis.config.Config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.Config" id="apidoc.element.fis.config.Config.Config">
+        function <span class="apidocSignatureSpan">fis.config.</span>Config
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Config = function (){
+    parent.apply(this, arguments);
+    constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.config.Config.prototype" id="apidoc.module.fis.config.Config.prototype">module fis.config.Config.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.constructor" id="apidoc.element.fis.config.Config.prototype.constructor">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (){
+    this.init.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.del" id="apidoc.element.fis.config.Config.prototype.del">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>del
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (path){
+    path = String(path || '').trim();
+    if(path){
+        var paths = path.split('.'),
+            data = this.data,
+            last = paths.pop(), key;
+        for(var i = 0, len = paths.length; i &lt; len; i++){
+            key = paths[i];
+            if(typeof data[key] === 'object'){
+                data = data[key];
+            } else {
+                return this;
+            }
+        }
+        if(typeof data[last] !== 'undefined'){
+            delete data[last];
+        }
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.get" id="apidoc.element.fis.config.Config.prototype.get">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>get
+        <span class="apidocSignatureSpan">(path, def)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (path, def){
+    var result = this.data || {};
+    (path || '').split('.').forEach(function(key){
+        if(key &amp;&amp; (typeof result !== 'undefined')){
+            result = result[key];
+        }
+    });
+    if(typeof result === 'undefined'){
+        return def;
+    } else {
+        return result;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.init" id="apidoc.element.fis.config.Config.prototype.init">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (){
+    this.data = {};
+    if(arguments.length &gt; 0){
+        this.merge.apply(this, arguments);
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.merge" id="apidoc.element.fis.config.Config.prototype.merge">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (){
+    var self = this;
+    [].slice.call(arguments).forEach(function(arg){
+        if(typeof arg === 'object'){
+            merge(self.data, arg);
+        } else {
+            fis.log.warning('unable to merge data[' + arg + '].');
+        }
+    });
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+'use strict';
+
+//kernel
+var fis = module.exports = require('fis-kernel');
+
+//merge standard conf
+fis.config.<span class="apidocCodeKeywordSpan">merge</span>({
+modules : {
+    preprocessor: {
+        js: 'components',
+        css: 'components',
+        html: 'components'
+    },
+    postprocessor : {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.require" id="apidoc.element.fis.config.Config.prototype.require">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>require
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require = function (name){
+    fis.require('config', name);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    '  Usage: ' + fis.cli.name + ' &lt;command&gt;',
+    '',
+    '  Commands:',
+    ''
+];
+
+fis.cli.help.commands.forEach(function(name){
+    var cmd = fis.<span class="apidocCodeKeywordSpan">require</span>('command', name);
+    name = cmd.name || name;
+    name = fis.util.pad(name, 12);
+    content.push('    ' + name + (cmd.desc || ''));
+});
+
+content = content.concat([
+    '',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.config.Config.prototype.set" id="apidoc.element.fis.config.Config.prototype.set">
+        function <span class="apidocSignatureSpan">fis.config.Config.prototype.</span>set
+        <span class="apidocSignatureSpan">(path, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (path, value){
+    if(typeof value === 'undefined'){
+        this.data = path;
+    } else {
+        path = String(path || '').trim();
+        if(path){
+            var paths = path.split('.'),
+                last = paths.pop(),
+                data = this.data || {};
+            paths.forEach(function(key){
+                var type = typeof data[key];
+                if(type === 'object'){
+                    data = data[key];
+                } else if(type === 'undefined'){
+                    data = data[key] = {};
+                } else {
+                    fis.log.error('forbidden to set property[' + key + '] of [' + type + '] data');
+                }
+            });
+            data[last] = value;
+        }
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.file" id="apidoc.module.fis.file">module fis.file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.file.file" id="apidoc.element.fis.file.file">
+        function <span class="apidocSignatureSpan">fis.</span>file
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (){
+    return new F(arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.file.wrap" id="apidoc.element.fis.file.wrap">
+        function <span class="apidocSignatureSpan">fis.file.</span>wrap
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrap = function (file){
+    if(typeof file === 'string'){
+        return new File(file);
+    } else if(file instanceof File){
+        return file;
+    } else {
+        fis.log.error('unable to convert [' + (typeof file) + '] to [File] object.');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.log" id="apidoc.module.fis.log">module fis.log</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.debug" id="apidoc.element.fis.log.debug">
+        function <span class="apidocSignatureSpan">fis.log.</span>debug
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (msg){
+    log('debug', exports.now() + ' ' + msg, exports.L_DEBUG);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.error" id="apidoc.element.fis.log.error">
+        function <span class="apidocSignatureSpan">fis.log.</span>error
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (err){
+    if(!(err instanceof Error)){
+        err = new Error(err.message || err);
+    }
+    if(exports.alert){
+        err.message += '\u0007';
+    }
+    if(exports.throw){
+        throw err
+    } else {
+        log('error', err.message, exports.L_ERROR);
+        process.exit(1);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.notice" id="apidoc.element.fis.log.notice">
+        function <span class="apidocSignatureSpan">fis.log.</span>notice
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notice = function (msg){
+    log('notice', msg, exports.L_NOTIC);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.now" id="apidoc.element.fis.log.now">
+        function <span class="apidocSignatureSpan">fis.log.</span>now
+        <span class="apidocSignatureSpan">(withoutMilliseconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">now = function (withoutMilliseconds){
+    var d = new Date(), str;
+    str = [
+        d.getHours(),
+        d.getMinutes(),
+        d.getSeconds()
+    ].join(':').replace(/\b\d\b/g, '0$&amp;');
+    if(!withoutMilliseconds){
+        str += '.' + ('00' + d.getMilliseconds()).substr(-4);
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.warning" id="apidoc.element.fis.log.warning">
+        function <span class="apidocSignatureSpan">fis.log.</span>warning
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warning = function (msg){
+    log('warning', msg, exports.L_WARNI);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.log.on" id="apidoc.module.fis.log.on">module fis.log.on</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.on.any" id="apidoc.element.fis.log.on.any">
+        function <span class="apidocSignatureSpan">fis.log.on.</span>any
+        <span class="apidocSignatureSpan">(type, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">any = function (type, msg){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.on.debug" id="apidoc.element.fis.log.on.debug">
+        function <span class="apidocSignatureSpan">fis.log.on.</span>debug
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (msg){ process.stdout.write('\n [DEBUG] ' + msg + '\n'); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.on.error" id="apidoc.element.fis.log.on.error">
+        function <span class="apidocSignatureSpan">fis.log.on.</span>error
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (msg){ process.stdout.write('\n [ERROR] ' + msg + '\n'); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.on.notice" id="apidoc.element.fis.log.on.notice">
+        function <span class="apidocSignatureSpan">fis.log.on.</span>notice
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notice = function (msg){ process.stdout.write('\n [NOTIC] ' + msg + '\n'); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.log.on.warning" id="apidoc.element.fis.log.on.warning">
+        function <span class="apidocSignatureSpan">fis.log.on.</span>warning
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warning = function (msg){ process.stdout.write('\n [WARNI] ' + msg + '\n'); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.project" id="apidoc.module.fis.project">module fis.project</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.getCachePath" id="apidoc.element.fis.project.getCachePath">
+        function <span class="apidocSignatureSpan">fis.project.</span>getCachePath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCachePath = function (){
+    return getPath(exports.getTempPath('cache'), arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.getProjectPath" id="apidoc.element.fis.project.getProjectPath">
+        function <span class="apidocSignatureSpan">fis.project.</span>getProjectPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProjectPath = function (){
+    if(PROJECT_ROOT){
+        return getPath(PROJECT_ROOT, arguments);
+    } else {
+        fis.log.error('undefined project root');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.getSource" id="apidoc.element.fis.project.getSource">
+        function <span class="apidocSignatureSpan">fis.project.</span>getSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSource = function (){
+    var root = exports.getProjectPath(),
+        source = {},
+        project_exclude = /^(\/output\b|\/fis-[^\/]+)$/,
+        include = fis.config.get('project.include'),
+        exclude = fis.config.get('project.exclude');
+    if (fis.util.is(exclude, 'Array')){
+        project_exclude = [project_exclude].concat(exclude);
+    }else if (exclude){
+        project_exclude = [project_exclude, exclude];
+    }
+    fis.util.find(root, include, project_exclude, root).forEach(function(file){
+        file = fis.file(file);
+        if (file.release) {
+            source[file.subpath] = file;
+        }
+    });
+    return source;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.getTempPath" id="apidoc.element.fis.project.getTempPath">
+        function <span class="apidocSignatureSpan">fis.project.</span>getTempPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTempPath = function (){
+    if(!TEMP_ROOT){
+        var list = ['FIS_TEMP_DIR', 'LOCALAPPDATA', 'APPDATA', 'HOME'];
+        var name = fis.cli &amp;&amp; fis.cli.name ? fis.cli.name : 'fis';
+        var tmp;
+        for(var i = 0, len = list.length; i &lt; len; i++){
+            if(tmp = process.env[list[i]]){
+                break;
+            }
+        }
+        tmp = tmp || __dirname + '/../';
+        exports.setTempRoot(tmp + '/.' + name + '-tmp');
+    }
+    return getPath(TEMP_ROOT, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.setProjectRoot" id="apidoc.element.fis.project.setProjectRoot">
+        function <span class="apidocSignatureSpan">fis.project.</span>setProjectRoot
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setProjectRoot = function (path){
+    if(fis.util.isDir(path)){
+        PROJECT_ROOT = fis.util.realpath(path);
+    } else {
+        fis.log.error('invalid project root path [' + path + ']');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.project.setTempRoot" id="apidoc.element.fis.project.setTempRoot">
+        function <span class="apidocSignatureSpan">fis.project.</span>setTempRoot
+        <span class="apidocSignatureSpan">(tmp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTempRoot = function (tmp){
+    TEMP_ROOT = initDir(tmp);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.uri" id="apidoc.module.fis.uri">module fis.uri</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.uri" id="apidoc.element.fis.uri.uri">
+        function <span class="apidocSignatureSpan">fis.</span>uri
+        <span class="apidocSignatureSpan">(path, dirname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uri = function (path, dirname){
+    var info = fis.util.stringQuote(path),
+        qInfo = fis.util.query(info.rest);
+    info.query = qInfo.query;
+    info.hash = qInfo.hash;
+    info.rest = qInfo.rest;
+    if(info.rest){
+        path = info.rest;
+        if(path.indexOf(':') === -1){
+            var file;
+            if(path[0] === '/'){
+                file = fis.project.getProjectPath(path);
+            } else if(dirname) {
+                file = fis.util(dirname, path);
+            } else {
+                fis.log.error('invalid dirname.');
+            }
+
+            var root = fis.project.getProjectPath();
+            if(file &amp;&amp; fis.util.isFile(file) &amp;&amp; file.indexOf(root) === 0){
+                info.file = fis.file(file);
+            }
+        }
+    }
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.getId" id="apidoc.element.fis.uri.getId">
+        function <span class="apidocSignatureSpan">fis.uri.</span>getId
+        <span class="apidocSignatureSpan">(path, dirname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getId = function (path, dirname){
+    var info = uri(path, dirname);
+    if(info.file){
+        info.id = info.file.getId();
+    } else {
+        info.id = info.rest;
+    }
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.replaceDefine" id="apidoc.element.fis.uri.replaceDefine">
+        function <span class="apidocSignatureSpan">fis.uri.</span>replaceDefine
+        <span class="apidocSignatureSpan">(value, escape)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function replaceDefine(value, escape){
+    return value.replace(/\$\{([^\}]+)\}/g, function(all, $1){
+        var val = fis.config.get($1);
+        if(typeof val === 'undefined'){
+            fis.log.error('undefined property [' + $1 + '].');
+        } else {
+            return escape ? fis.util.escapeReg(val) : val;
+        }
+        return all;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.replaceMatches" id="apidoc.element.fis.uri.replaceMatches">
+        function <span class="apidocSignatureSpan">fis.uri.</span>replaceMatches
+        <span class="apidocSignatureSpan">(value, matches)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function replaceMatches(value, matches){
+    return value.replace(/\$(\d+|&amp;)/g, function(all, $1){
+        var key = $1 === '&amp;' ? '0' : $1;
+        return matches.hasOwnProperty(key) ? (matches[key] || '') : all;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.replaceProperties" id="apidoc.element.fis.uri.replaceProperties">
+        function <span class="apidocSignatureSpan">fis.uri.</span>replaceProperties
+        <span class="apidocSignatureSpan">(source, matches, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function replaceProperties(source, matches, target){
+    var type = typeof source;
+    if(type === 'object'){
+        if(fis.util.is(source, 'Array')){
+            target = target || [];
+        } else {
+            target = target || {};
+        }
+        fis.util.map(source, function(key, value){
+            target[key] = replaceProperties(value, matches);
+        });
+        return target;
+    } else if(type === 'string'){
+        return replaceDefine(replaceMatches(source, matches));
+// TODO support function type
+//    } else if(type === 'function'){
+//        return source(subpath || target.subpath, matches);
+    } else {
+        return source;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.uri.roadmap" id="apidoc.element.fis.uri.roadmap">
+        function <span class="apidocSignatureSpan">fis.uri.</span>roadmap
+        <span class="apidocSignatureSpan">(subpath, path, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function roadmap(subpath, path, obj){
+    var map = fis.config.get('roadmap.' + path, []);
+    for(var i = 0, len = map.length; i &lt; len; i++){
+        var opt = map[i], reg = opt.reg;
+        if(reg){
+            if(typeof reg === 'string'){
+                reg = fis.util.glob(replaceDefine(reg, true));
+            } else if(!fis.util.is(reg, 'RegExp')){
+                fis.log.error('invalid regexp [' + reg + '] of [roadmap.' + path + '.' + i + ']');
+            }
+            var matches = subpath.match(reg);
+            if(matches){
+                obj = obj || {};
+                replaceProperties(opt, matches, obj);
+                delete obj.reg;
+                return obj;
+            }
+        } else {
+            fis.log.error('[roadmap.' + path + '.' + i + '] missing property [reg].');
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fis.util" id="apidoc.module.fis.util">module fis.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.util" id="apidoc.element.fis.util.util">
+        function <span class="apidocSignatureSpan">fis.</span>util
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">util = function (path){
+    var type = typeof path;
+        if(arguments.length &gt; 1) {
+            path = Array.prototype.join.call(arguments, '/');
+        } else if(type === 'string') {
+            //do nothing for quickly determining.
+        } else if(type === 'object') {
+            path = Array.prototype.join.call(path, '/');
+        } else if(type === 'undefined') {
+            path = '';
+        }
+        if(path){
+            path = pth.normalize(path.replace(/[\/\\]+/g, '/')).replace(/\\/g, '/');
+            if(path !== '/'){
+                path = path.replace(/\/$/, '');
+            }
+        }
+        return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.base64" id="apidoc.element.fis.util.base64">
+        function <span class="apidocSignatureSpan">fis.util.</span>base64
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64 = function (data){
+    if(data instanceof Buffer){
+        //do nothing for quickly determining.
+    } else if(data instanceof Array){
+        data = new Buffer(data);
+    } else {
+        //convert to string.
+        data = new Buffer(String(data || ''));
+    }
+    return data.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.camelcase" id="apidoc.element.fis.util.camelcase">
+        function <span class="apidocSignatureSpan">fis.util.</span>camelcase
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camelcase = function (str){
+    var ret = '';
+    if(str){
+        str.split(/[-_ ]+/).forEach(function(ele){
+            ret += ele[0].toUpperCase() + ele.substring(1);
+        });
+    } else {
+        ret = str;
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.clone" id="apidoc.element.fis.util.clone">
+        function <span class="apidocSignatureSpan">fis.util.</span>clone
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (source) {
+    var ret;
+    switch(toString.call(source)){
+        case '[object Object]':
+            ret = {};
+            _.map(source, function(k, v){
+                ret[k] = _.clone(v);
+            });
+            break;
+        case '[object Array]':
+            ret = [];
+            source.forEach(function(ele){
+                ret.push(_.clone(ele));
+            });
+            break;
+        default :
+            ret = source;
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.copy" id="apidoc.element.fis.util.copy">
+        function <span class="apidocSignatureSpan">fis.util.</span>copy
+        <span class="apidocSignatureSpan">(rSource, target, include, exclude, uncover, move)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (rSource, target, include, exclude, uncover, move){
+    var removedAll = true,
+        source = _.realpath(rSource);
+    target = _(target);
+    if(source){
+        var stat = fs.statSync(source);
+        if(stat.isDirectory()){
+            fs.readdirSync(source).forEach(function(name){
+                if(name != '.' &amp;&amp; name != '..') {
+                    removedAll = _.copy(
+                        source + '/' + name,
+                        target + '/' + name,
+                        include, exclude,
+                        uncover, move
+                    ) &amp;&amp; removedAll;
+                }
+            });
+            if(move &amp;&amp; removedAll) {
+                fs.rmdirSync(source);
+            }
+        } else if(stat.isFile() &amp;&amp; _.filter(source, include, exclude)){
+            if(uncover &amp;&amp; _exists(target)){
+                //uncover
+                removedAll = false;
+            } else {
+                _.write(target, fs.readFileSync(source, null));
+                if(move) {
+                    fs.unlinkSync(source);
+                }
+            }
+        } else {
+            removedAll = false;
+        }
+    } else {
+        fis.log.error('unable to copy [' + rSource + ']: No such file or directory.');
+    }
+    return removedAll;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.del" id="apidoc.element.fis.util.del">
+        function <span class="apidocSignatureSpan">fis.util.</span>del
+        <span class="apidocSignatureSpan">(rPath, include, exclude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (rPath, include, exclude){
+    var removedAll = true;
+    var path;
+    if(rPath &amp;&amp; _.exists(rPath)) {
+        var stat = fs.lstatSync(rPath);
+        var isFile = stat.isFile() || stat.isSymbolicLink();
+
+        if (stat.isSymbolicLink()) {
+            path = rPath;
+        } else {
+            path = _.realpath(rPath);
+        }
+
+        if(/^(?:\w:)?\/$/.test(path)){
+            fis.log.error('unable to delete directory [' + rPath + '].');
+        }
+
+        if(stat.isDirectory()){
+            fs.readdirSync(path).forEach(function(name){
+                if(name != '.' &amp;&amp; name != '..') {
+                    removedAll = _.del(path + '/' + name, include, exclude) &amp;&amp; removedAll;
+                }
+            });
+            if(removedAll) {
+                fs.rmdirSync(path);
+            }
+        } else if(isFile &amp;&amp; _.filter(path, include, exclude)) {
+            fs.unlinkSync(path);
+        } else {
+            removedAll = false;
+        }
+    } else {
+        //fis.log.error('unable to delete [' + rPath + ']: No such file or directory.');
+    }
+    return removedAll;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.download" id="apidoc.element.fis.util.download">
+        function <span class="apidocSignatureSpan">fis.util.</span>download
+        <span class="apidocSignatureSpan">(url, callback, extract, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (url, callback, extract, opt){
+    opt  = _.parseUrl(url, opt || {});
+    var http = opt.protocol === 'https:' ? require('https') : require('http'),
+        name = _.md5(url, 8) + _.ext(url).ext,
+        tmp  = fis.project.getTempPath('downloads', name),
+        data = opt.data;
+    delete opt.data;
+    _.write(tmp, '');
+    var writer = fs.createWriteStream(tmp),
+        http_err_handler = function(err){
+            writer.destroy();
+            fs.unlinkSync(tmp);
+            var msg = typeof err === 'object' ? err.message : err;
+            if(callback){
+                callback(msg);
+            } else {
+                fis.log.error('request error [' + msg + ']');
+            }
+        },
+        req = http.request(opt, function(res){
+            var status = res.statusCode;
+            res
+                .on('data', function(chunk){
+                    writer.write(chunk);
+                })
+                .on('end', function(){
+                    if(status &gt;= 200 &amp;&amp; status &lt; 300 || status === 304){
+                        if(extract){
+                            fs
+                                .createReadStream(tmp)
+                                .pipe(getTar().Extract({ path : extract }))
+                                .on('error', function(err){
+                                    if(callback){
+                                        callback(err);
+                                    } else {
+                                        fis.log.error('extract tar file [' + tmp + '] fail, error [' + err + ']');
+                                    }
+                                })
+                                .on('end', function(){
+                                    if(callback &amp;&amp; (typeof callback(null, tmp, res) === 'undefined')){
+                                        fs.unlinkSync(tmp);
+                                    }
+                                });
+                        } else if(callback &amp;&amp; (typeof callback(null, tmp, res) === 'undefined')){
+                            fs.unlinkSync(tmp);
+                        }
+                    } else {
+                        http_err_handler(status);
+                    }
+                })
+                .on('error', http_err_handler);
+        });
+    req.on('error', http_err_handler);
+    if(data){
+        req.write(data);
+    }
+    req.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.escapeReg" id="apidoc.element.fis.util.escapeReg">
+        function <span class="apidocSignatureSpan">fis.util.</span>escapeReg
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeReg = function (str){
+    return str.replace(/[\.\\\+\*\?\[\^\]\$\(\){}=!&lt;&gt;\|:\/]/g, '\\$&amp;');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.escapeShellArg" id="apidoc.element.fis.util.escapeShellArg">
+        function <span class="apidocSignatureSpan">fis.util.</span>escapeShellArg
+        <span class="apidocSignatureSpan">(cmd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeShellArg = function (cmd){
+    return '"' + cmd + '"';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.escapeShellCmd" id="apidoc.element.fis.util.escapeShellCmd">
+        function <span class="apidocSignatureSpan">fis.util.</span>escapeShellCmd
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeShellCmd = function (str){
+    return str.replace(/ /g, '"$&amp;"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.exists" id="apidoc.element.fis.util.exists">
+        function <span class="apidocSignatureSpan">fis.util.</span>exists
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (path) {
+  try {
+    nullCheck(path);
+    binding.stat(pathModule._makeLong(path), statValues);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.ext" id="apidoc.element.fis.util.ext">
+        function <span class="apidocSignatureSpan">fis.util.</span>ext
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ext = function (str){
+    var info = _.query(str), pos;
+    str = info.fullname = info.rest;
+    if((pos = str.lastIndexOf('/')) &gt; -1){
+        if(pos === 0){
+            info.rest = info.dirname = '/';
+        } else {
+            info.dirname = str.substring(0, pos);
+            info.rest = info.dirname + '/';
+        }
+        str = str.substring(pos + 1);
+    } else {
+        info.rest = info.dirname = '';
+    }
+    if((pos = str.lastIndexOf('.')) &gt; -1){
+        info.ext = str.substring(pos).toLowerCase();
+        info.filename = str.substring(0, pos);
+        info.basename = info.filename + info.ext;
+    } else {
+        info.basename = info.filename = str;
+        info.ext = '';
+    }
+    info.rest += info.filename;
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.filter" id="apidoc.element.fis.util.filter">
+        function <span class="apidocSignatureSpan">fis.util.</span>filter
+        <span class="apidocSignatureSpan">(str, include, exclude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (str, include, exclude){
+
+    function normalize(pattern){
+        var type = toString.call(pattern);
+        switch (type){
+            case '[object String]':
+                return _.glob(pattern);
+            case '[object RegExp]':
+                return pattern;
+            default:
+                fis.log.error('invalid regexp [' + pattern + '].');
+        }
+    }
+
+    function match(str, patterns){
+        var matched = false;
+        if (!_.is(patterns, 'Array')){
+            patterns = [patterns];
+        }
+        patterns.every(function(pattern){
+            if (!pattern){
+                return true;
+            }
+            matched = matched || str.search(normalize(pattern)) &gt; -1;
+            return !matched;
+        });
+        return matched;
+    }
+
+    var isInclude, isExclude;
+
+    if (include) {
+        isInclude = match(str, include);
+    }else{
+        isInclude = true;
+    }
+
+    if (exclude) {
+        isExclude = match(str, exclude);
+    }
+
+    return isInclude &amp;&amp; !isExclude;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.find" id="apidoc.element.fis.util.find">
+        function <span class="apidocSignatureSpan">fis.util.</span>find
+        <span class="apidocSignatureSpan">(rPath, include, exclude, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (rPath, include, exclude, root){
+    var list = [],
+        path = _.realpath(rPath),
+        filterPath = root ? path.substring(root.length) : path;
+    if(path){
+        var stat = fs.statSync(path);
+        if(stat.isDirectory() &amp;&amp; (include || _.filter(filterPath, include, exclude))){
+            fs.readdirSync(path).forEach(function(p){
+                if(p[0] != '.') {
+                    list = list.concat(_.find(path + '/' + p, include, exclude, root));
+                }
+            });
+        } else if(stat.isFile() &amp;&amp; _.filter(filterPath, include, exclude)) {
+            list.push(path);
+        }
+    } else {
+        fis.log.error('unable to find [' + rPath + ']: No such file or directory.');
+    }
+    return list.sort();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.getMimeType" id="apidoc.element.fis.util.getMimeType">
+        function <span class="apidocSignatureSpan">fis.util.</span>getMimeType
+        <span class="apidocSignatureSpan">(ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMimeType = function (ext){
+    if(ext[0] === '.'){
+        ext = ext.substring(1);
+    }
+    return MIME_MAP[ext] || 'application/x-' + ext;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.glob" id="apidoc.element.fis.util.glob">
+        function <span class="apidocSignatureSpan">fis.util.</span>glob
+        <span class="apidocSignatureSpan">(pattern, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">glob = function (pattern, str){
+    var sep = _.escapeReg('/');
+    pattern = new RegExp('^' + sep + '?' +
+        _.escapeReg(
+                pattern
+                    .replace(/\\/g, '/')
+                    .replace(/^\//, '')
+            )
+            .replace(new RegExp(sep + '\\*\\*' + sep, 'g'), sep + '.*(?:' + sep + ')?')
+            .replace(new RegExp(sep + '\\*\\*', 'g'), sep + '.*')
+            .replace(/\\\*\\\*/g, '.*')
+            .replace(/\\\*/g, '[^' + sep + ']*')
+            .replace(/\\\?/g, '[^' + sep + ']') + '$',
+        'i'
+    );
+    if(typeof str === 'string'){
+        return pattern.test(str);
+    } else {
+        return pattern;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.install" id="apidoc.element.fis.util.install">
+        function <span class="apidocSignatureSpan">fis.util.</span>install
+        <span class="apidocSignatureSpan">(name, version, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">install = function (name, version, opt){
+    version = version === '*' ? 'latest' : ( version || 'latest' );
+    var remote = opt.remote.replace(/^\/$/, '');
+    var url = remote + '/' + name + '/' + version + '.tar';
+    var extract = opt.extract || process.cwd();
+    if(opt.before){
+        opt.before(name, version);
+    }
+    _.download(url, function(err){
+        if(err){
+            if(opt.error){
+                opt.error(err);
+            } else {
+                fis.log.error( 'unable to download component [' +
+                    name + '@' + version + '] from [' + url + '], error [' + err + ']');
+            }
+        } else {
+            if(opt.done){
+                opt.done(name, version);
+            }
+            process.stdout.write('install [' + name + '@' + version + ']\n');
+            var pkg = _(extract, 'package.json');
+            if(_.isFile(pkg)){
+                var info = _.readJSON(pkg);
+                fs.unlinkSync(pkg);
+                _.map(info.dependencies || {}, function(depName, depVersion){
+                    _.install(depName, depVersion, opt);
+                });
+            }
+        }
+    }, extract);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.is" id="apidoc.element.fis.util.is">
+        function <span class="apidocSignatureSpan">fis.util.</span>is
+        <span class="apidocSignatureSpan">(source, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is = function (source, type){
+    return toString.call(source) === '[object ' + type + ']';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isAbsolute" id="apidoc.element.fis.util.isAbsolute">
+        function <span class="apidocSignatureSpan">fis.util.</span>isAbsolute
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAbsolute = function (path) {
+    if (IS_WIN) {
+        return /^[a-z]:/i.test(path);
+    } else {
+        if(path === '/'){
+            return true;
+        } else {
+            var split = path.split('/');
+            if(split[0] === '~'){
+                return true;
+            } else if(split[0] === '' &amp;&amp; split[1]) {
+                return _.isDir('/' + split[1] + '/' + split[2]);
+            } else {
+                return false;
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isDir" id="apidoc.element.fis.util.isDir">
+        function <span class="apidocSignatureSpan">fis.util.</span>isDir
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDir = function (path){
+    return _exists(path) &amp;&amp; fs.statSync(path).isDirectory();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isEmpty" id="apidoc.element.fis.util.isEmpty">
+        function <span class="apidocSignatureSpan">fis.util.</span>isEmpty
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEmpty = function (obj) {
+    if (obj === null) return true;
+    if (_.is(obj, 'Array')) return obj.length == 0;
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            return false;
+        }
+    }
+    return true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isFile" id="apidoc.element.fis.util.isFile">
+        function <span class="apidocSignatureSpan">fis.util.</span>isFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFile = function (path){
+    return _exists(path) &amp;&amp; fs.statSync(path).isFile();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isImageFile" id="apidoc.element.fis.util.isImageFile">
+        function <span class="apidocSignatureSpan">fis.util.</span>isImageFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isImageFile = function (path){
+    return getFileTypeReg('image').test(path || '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isTextFile" id="apidoc.element.fis.util.isTextFile">
+        function <span class="apidocSignatureSpan">fis.util.</span>isTextFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isTextFile = function (path){
+    return getFileTypeReg('text').test(path || '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isUtf8" id="apidoc.element.fis.util.isUtf8">
+        function <span class="apidocSignatureSpan">fis.util.</span>isUtf8
+        <span class="apidocSignatureSpan">(bytes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUtf8 = function (bytes) {
+    var i = 0;
+    while(i &lt; bytes.length) {
+        if((// ASCII
+            0x00 &lt;= bytes[i] &amp;&amp; bytes[i] &lt;= 0x7F
+        )) {
+            i += 1;
+            continue;
+        }
+
+        if((// non-overlong 2-byte
+            (0xC2 &lt;= bytes[i] &amp;&amp; bytes[i] &lt;= 0xDF) &amp;&amp;
+            (0x80 &lt;= bytes[i+1] &amp;&amp; bytes[i+1] &lt;= 0xBF)
+        )) {
+            i += 2;
+            continue;
+        }
+
+        if(
+            (// excluding overlongs
+                bytes[i] == 0xE0 &amp;&amp;
+                (0xA0 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF)
+            ) || (// straight 3-byte
+                ((0xE1 &lt;= bytes[i] &amp;&amp; bytes[i] &lt;= 0xEC) ||
+                bytes[i] == 0xEE ||
+                bytes[i] == 0xEF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF)
+            ) || (// excluding surrogates
+                bytes[i] == 0xED &amp;&amp;
+                (0x80 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0x9F) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF)
+            )
+        ) {
+            i += 3;
+            continue;
+        }
+
+        if(
+            (// planes 1-3
+                bytes[i] == 0xF0 &amp;&amp;
+                (0x90 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 3] &amp;&amp; bytes[i + 3] &lt;= 0xBF)
+            ) || (// planes 4-15
+                (0xF1 &lt;= bytes[i] &amp;&amp; bytes[i] &lt;= 0xF3) &amp;&amp;
+                (0x80 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 3] &amp;&amp; bytes[i + 3] &lt;= 0xBF)
+            ) || (// plane 16
+                bytes[i] == 0xF4 &amp;&amp;
+                (0x80 &lt;= bytes[i + 1] &amp;&amp; bytes[i + 1] &lt;= 0x8F) &amp;&amp;
+                (0x80 &lt;= bytes[i + 2] &amp;&amp; bytes[i + 2] &lt;= 0xBF) &amp;&amp;
+                (0x80 &lt;= bytes[i + 3] &amp;&amp; bytes[i + 3] &lt;= 0xBF)
+            )
+        ) {
+            i += 4;
+            continue;
+        }
+        return false;
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.isWin" id="apidoc.element.fis.util.isWin">
+        function <span class="apidocSignatureSpan">fis.util.</span>isWin
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isWin = function (){
+    return IS_WIN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.map" id="apidoc.element.fis.util.map">
+        function <span class="apidocSignatureSpan">fis.util.</span>map
+        <span class="apidocSignatureSpan">(obj, callback, merge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (obj, callback, merge){
+    var index = 0;
+    for(var key in obj){
+        if(obj.hasOwnProperty(key)){
+            if(merge){
+                callback[key] = obj[key];
+            } else if(callback(key, obj[key], index++)) {
+                break;
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.md5" id="apidoc.element.fis.util.md5">
+        function <span class="apidocSignatureSpan">fis.util.</span>md5
+        <span class="apidocSignatureSpan">(data, len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md5 = function (data, len){
+    var md5sum = crypto.createHash('md5'),
+        encoding = typeof data === 'string' ? 'utf8' : 'binary';
+    md5sum.update(data, encoding);
+    len = len || fis.config.get('project.md5Length', 7);
+    return md5sum.digest('hex').substring(0, len);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.merge" id="apidoc.element.fis.util.merge">
+        function <span class="apidocSignatureSpan">fis.util.</span>merge
+        <span class="apidocSignatureSpan">(source, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (source, target){
+    if(_.is(source, 'Object') &amp;&amp; _.is(target, 'Object')){
+        _.map(target, function(key, value){
+            source[key] = _.merge(source[key], value);
+        });
+    } else {
+        source = target;
+    }
+    return source;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+'use strict';
+
+//kernel
+var fis = module.exports = require('fis-kernel');
+
+//merge standard conf
+fis.config.<span class="apidocCodeKeywordSpan">merge</span>({
+modules : {
+    preprocessor: {
+        js: 'components',
+        css: 'components',
+        html: 'components'
+    },
+    postprocessor : {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.mkdir" id="apidoc.element.fis.util.mkdir">
+        function <span class="apidocSignatureSpan">fis.util.</span>mkdir
+        <span class="apidocSignatureSpan">(path, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdir = function (path, mode){
+    if (typeof mode === 'undefined') {
+        //511 === 0777
+        mode = 511 &amp; (~process.umask());
+    }
+    if(_exists(path)) return;
+    path.split('/').reduce(function(prev, next) {
+        if(prev &amp;&amp; !_exists(prev)) {
+            fs.mkdirSync(prev, mode);
+        }
+        return prev + '/' + next;
+    });
+    if(!_exists(path)) {
+        fs.mkdirSync(path, mode);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.mtime" id="apidoc.element.fis.util.mtime">
+        function <span class="apidocSignatureSpan">fis.util.</span>mtime
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mtime = function (path){
+    var time = 0;
+    if(_exists(path)){
+        time = fs.statSync(path).mtime;
+    }
+    return time;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.nohup" id="apidoc.element.fis.util.nohup">
+        function <span class="apidocSignatureSpan">fis.util.</span>nohup
+        <span class="apidocSignatureSpan">(cmd, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nohup = function (cmd, options, callback){
+    if(typeof options === 'function'){
+        callback = options;
+        options = null;
+    }
+    var exec = require('child_process').exec;
+    if(IS_WIN){
+        var cmdEscape = cmd.replace(/"/g, '""'),
+            file = fis.project.getTempPath('nohup-' + _.md5(cmd) + '.vbs'),
+            script = '';
+        script += 'Dim shell\n';
+        script += 'Set shell = Wscript.CreateObject("WScript.Shell")\n';
+        script += 'ret = shell.Run("cmd.exe /c start /b ' + cmdEscape + '", 0, TRUE)\n';
+        script += 'WScript.StdOut.Write(ret)\n';
+        script += 'Set shell = NoThing';
+        _.write(file, script);
+        return exec('cscript.exe /nologo "' + file + '"', options, function(error, stdout){
+            if(stdout != '0'){
+                fis.log.error('exec command[' + cmd + '] fail.');
+            }
+            fs.unlinkSync(file);
+            if(typeof callback === 'function') {
+                callback();
+            }
+        });
+    } else {
+        return exec('nohup ' + cmd + ' &gt; /dev/null 2&gt;&amp;1 &amp;', options, function(error, stdout){
+            if(error !== null) {
+                fis.log.error('exec command[' + cmd + '] fail, stdout [' + stdout + '].');
+            }
+            if(typeof callback === 'function') {
+                callback();
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.normalize" id="apidoc.element.fis.util.normalize">
+        function <span class="apidocSignatureSpan">fis.util.</span>normalize
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalize = function (path){
+    var type = typeof path;
+        if(arguments.length &gt; 1) {
+            path = Array.prototype.join.call(arguments, '/');
+        } else if(type === 'string') {
+            //do nothing for quickly determining.
+        } else if(type === 'object') {
+            path = Array.prototype.join.call(path, '/');
+        } else if(type === 'undefined') {
+            path = '';
+        }
+        if(path){
+            path = pth.normalize(path.replace(/[\/\\]+/g, '/')).replace(/\\/g, '/');
+            if(path !== '/'){
+                path = path.replace(/\/$/, '');
+            }
+        }
+        return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.pad" id="apidoc.element.fis.util.pad">
+        function <span class="apidocSignatureSpan">fis.util.</span>pad
+        <span class="apidocSignatureSpan">(str, len, fill, pre)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pad = function (str, len, fill, pre){
+    if(str.length &lt; len){
+        fill = (new Array(len)).join(fill || ' ');
+        if(pre){
+            str = (fill + str).substr(-len);
+        } else {
+            str = (str + fill).substring(0, len);
+        }
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    '  Commands:',
+    ''
+];
+
+fis.cli.help.commands.forEach(function(name){
+    var cmd = fis.require('command', name);
+    name = cmd.name || name;
+    name = fis.util.<span class="apidocCodeKeywordSpan">pad</span>(name, 12);
+    content.push('    ' + name + (cmd.desc || ''));
+});
+
+content = content.concat([
+    '',
+    '  Options:',
+    '',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.parseUrl" id="apidoc.element.fis.util.parseUrl">
+        function <span class="apidocSignatureSpan">fis.util.</span>parseUrl
+        <span class="apidocSignatureSpan">(url, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseUrl = function (url, opt){
+    opt = opt || {};
+    url = Url.parse(url);
+    var ssl = url.protocol === 'https:';
+    opt.host = opt.host
+        || opt.hostname
+        || ((ssl || url.protocol === 'http:') ? url.hostname : 'localhost');
+    opt.port = opt.port || (url.port || (ssl ? 443 : 80));
+    opt.path = opt.path || (url.pathname + (url.search ? url.search : ''));
+    opt.method = opt.method || 'GET';
+    opt.agent = opt.agent || false;
+    return opt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.pathinfo" id="apidoc.element.fis.util.pathinfo">
+        function <span class="apidocSignatureSpan">fis.util.</span>pathinfo
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pathinfo = function (path){
+    //can not use _() method directly for the case _.pathinfo('a/').
+    var type = typeof path;
+    if(arguments.length &gt; 1) {
+        path = Array.prototype.join.call(arguments, '/');
+    } else if(type === 'string') {
+        //do nothing for quickly determining.
+    } else if(type === 'object') {
+        path = Array.prototype.join.call(path, '/');
+    }
+    return _.ext(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.pipe" id="apidoc.element.fis.util.pipe">
+        function <span class="apidocSignatureSpan">fis.util.</span>pipe
+        <span class="apidocSignatureSpan">(type, callback, def)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipe = function (type, callback, def){
+    var processors = fis.config.get('modules.' + type, def);
+    if(processors){
+        var typeOf = typeof processors;
+        if(typeOf === 'string'){
+            processors = processors.trim().split(/\s*,\s*/);
+        } else if(typeOf === 'function'){
+            processors = [ processors ];
+        }
+        type = type.split('.')[0];
+        processors.forEach(function(processor, index){
+            var typeOf = typeof processor, key;
+            if(typeOf === 'string'){
+                key = type + '.' + processor;
+                processor = fis.require(type, processor);
+            } else {
+                key = type + '.' + index;
+            }
+            if(typeof processor === 'function'){
+                var settings = fis.config.get('settings.' + key, {});
+                if(processor.defaultOptions){
+                    settings = _.merge(processor.defaultOptions, settings);
+                }
+                callback(processor, settings, key);
+            } else {
+                fis.log.warning('invalid processor [modules.' + key + ']');
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.query" id="apidoc.element.fis.util.query">
+        function <span class="apidocSignatureSpan">fis.util.</span>query
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (str){
+    var rest = str,
+        pos = rest.indexOf('#'),
+        hash = '',
+        query = '';
+    if(pos &gt; -1){
+        hash = rest.substring(pos);
+        rest  = rest.substring(0, pos);
+    }
+    pos = rest.indexOf('?');
+    if(pos &gt; -1){
+        query = rest.substring(pos);
+        rest  = rest.substring(0, pos);
+    }
+    rest = rest.replace(/\\/g, '/');
+    if(rest !== '/'){
+        rest = rest.replace(/\/\.?$/, '');
+    }
+    return {
+        origin : str,
+        rest : rest,
+        hash : hash,
+        query : query
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.read" id="apidoc.element.fis.util.read">
+        function <span class="apidocSignatureSpan">fis.util.</span>read
+        <span class="apidocSignatureSpan">(path, convert)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (path, convert){
+    var content = false;
+    if(_exists(path)){
+        content = fs.readFileSync(path);
+        if(convert || _.isTextFile(path)){
+            content = _.readBuffer(content);
+        }
+    } else {
+        fis.log.error('unable to read file[' + path + ']: No such file or directory.');
+    }
+    return content;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.readBuffer" id="apidoc.element.fis.util.readBuffer">
+        function <span class="apidocSignatureSpan">fis.util.</span>readBuffer
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readBuffer = function (buffer){
+    if(_.isUtf8(buffer)){
+        buffer = buffer.toString('utf8');
+        if (buffer.charCodeAt(0) === 0xFEFF) {
+            buffer = buffer.substring(1);
+        }
+    } else {
+        buffer = getIconv().decode(buffer, 'gbk');
+    }
+    return buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.readJSON" id="apidoc.element.fis.util.readJSON">
+        function <span class="apidocSignatureSpan">fis.util.</span>readJSON
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readJSON = function (path){
+    var json = _.read(path),
+        result = {};
+    try {
+        result = JSON.parse(json);
+    } catch(e){
+        fis.log.error('parse json file[' + path + '] fail, error [' + e.message + ']');
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//colors
+fis.cli.colors = require('colors');
+
+//commander object
+fis.cli.commander = null;
+
+//package.json
+fis.cli.info = fis.util.<span class="apidocCodeKeywordSpan">readJSON</span>(__dirname + '/package.json');
+
+//output help info
+fis.cli.help = function(){
+var content = [
+    '',
+    '  Usage: ' + fis.cli.name + ' &lt;command&gt;',
+    '',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.realpath" id="apidoc.element.fis.util.realpath">
+        function <span class="apidocSignatureSpan">fis.util.</span>realpath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">realpath = function (path){
+    if(path &amp;&amp; _exists(path)){
+        path = fs.realpathSync(path);
+        if(IS_WIN){
+            path = path.replace(/\\/g, '/');
+        }
+        if(path !== '/'){
+            path = path.replace(/\/$/, '');
+        }
+        return path;
+    } else {
+        return false;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.realpathSafe" id="apidoc.element.fis.util.realpathSafe">
+        function <span class="apidocSignatureSpan">fis.util.</span>realpathSafe
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">realpathSafe = function (path){
+    return _.realpath(path) || _(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.stringQuote" id="apidoc.element.fis.util.stringQuote">
+        function <span class="apidocSignatureSpan">fis.util.</span>stringQuote
+        <span class="apidocSignatureSpan">(str, quotes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringQuote = function (str, quotes){
+    var info = {
+        origin : str,
+        rest   : str = str.trim(),
+        quote  : ''
+    };
+    if(str){
+        quotes = quotes || '\'"';
+        var strLen = str.length - 1;
+        for(var i = 0, len = quotes.length; i &lt; len; i++){
+            var c = quotes[i];
+            if(str[0] === c &amp;&amp; str[strLen] === c){
+                info.quote = c;
+                info.rest  = str.substring(1, strLen);
+                break;
+            }
+        }
+    }
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.toEncoding" id="apidoc.element.fis.util.toEncoding">
+        function <span class="apidocSignatureSpan">fis.util.</span>toEncoding
+        <span class="apidocSignatureSpan">(str, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toEncoding = function (str, encoding){
+    return getIconv().toEncoding(String(str), encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.touch" id="apidoc.element.fis.util.touch">
+        function <span class="apidocSignatureSpan">fis.util.</span>touch
+        <span class="apidocSignatureSpan">(path, mtime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">touch = function (path, mtime){
+    if(!_exists(path)){
+        _.write(path, '');
+    }
+    if(mtime instanceof Date){
+        //do nothing for quickly determining.
+    } else if(typeof mtime === 'number') {
+        var time = new Date();
+        time.setTime(mtime);
+        mtime = time;
+    } else {
+        fis.log.error('invalid argument [mtime]');
+    }
+    fs.utimesSync(path, mtime, mtime);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.upload" id="apidoc.element.fis.util.upload">
+        function <span class="apidocSignatureSpan">fis.util.</span>upload
+        <span class="apidocSignatureSpan">(url, opt, data, content, subpath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (url, opt, data, content, subpath, callback){
+    if(typeof content === 'string'){
+        content = new Buffer(content, 'utf8');
+    } else if(!(content instanceof  Buffer)){
+        fis.log.error('unable to upload content [' + (typeof content) + ']');
+    }
+    data = data || {};
+    var endl = '\r\n';
+    var boundary = '-----np' + Math.random();
+    var collect = [];
+    _.map(data, function(key, value){
+        collect.push('--' + boundary + endl);
+        collect.push('Content-Disposition: form-data; name="' + key + '"' + endl);
+        collect.push(endl);
+        collect.push(value + endl);
+    });
+    collect.push('--' + boundary + endl);
+    collect.push('Content-Disposition: form-data; name="file"; filename="' + subpath + '"' + endl);
+    collect.push(endl);
+    collect.push(content);
+    collect.push('--' + boundary + '--' + endl);
+
+    var length = 0;
+    collect.forEach(function(ele){
+        length += ele.length;
+    });
+
+    opt = opt || {};
+    opt.method = opt.method || 'POST';
+    opt.headers = {
+        'Content-Type': 'multipart/form-data; boundary=' + boundary,
+        'Content-Length': length
+    };
+    opt = _.parseUrl(url, opt);
+    var http = opt.protocol === 'https:' ? require('https') : require('http');
+    var req = http.request(opt, function(res){
+        var status = res.statusCode;
+        var body = '';
+        res
+            .on('data', function(chunk){
+                body += chunk;
+            })
+            .on('end', function(){
+                if(status &gt;= 200 &amp;&amp; status &lt; 300 || status === 304){
+                    callback(null, body);
+                } else {
+                    callback(status);
+                }
+            })
+            .on('error', function(err){
+                callback(err.message || err);
+            });
+    });
+    collect.forEach(function(d){
+        req.write(d);
+        if(d instanceof Buffer){
+            req.write(endl);
+        }
+    });
+    req.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fis.util.write" id="apidoc.element.fis.util.write">
+        function <span class="apidocSignatureSpan">fis.util.</span>write
+        <span class="apidocSignatureSpan">(path, data, charset, append)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (path, data, charset, append){
+    if(!_exists(path)){
+        _.mkdir(_.pathinfo(path).dirname);
+    }
+    if(charset){
+        data = getIconv().encode(data, charset);
+    }
+    if(append) {
+        fs.appendFileSync(path, data, null);
+    } else {
+        fs.writeFileSync(path, data, null);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
